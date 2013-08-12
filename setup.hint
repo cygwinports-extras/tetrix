@@ -1,5 +1,0 @@
-category: Games
-requires: libncurses10
-sdesc: "Console Tetris game"
-ldesc: "A UNIX-hosted, curses-based clone of Tetris. Probably obsolete 
-unless you can't use X for some reason."

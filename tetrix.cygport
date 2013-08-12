@@ -1,0 +1,21 @@
+NAME="tetrix"
+VERSION=2.3
+RELEASE=1
+CATEGORY="Games"
+SUMMARY="Console Tetris game"
+DESCRIPTION="A UNIX-hosted, curses-based clone of Tetris. Probably obsolete
+unless you can't use X for some reason."
+HOMEPAGE="http://www.catb.org/~esr/tetrix/"
+SRC_URI="http://www.catb.org/~esr/tetrix/tetrix-${VERSION}.tar.gz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake CFLAGS="${CFLAGS} -DIBM -I/usr/include/ncurses"
+}
+
+src_install() {
+	cd ${B}
+	dobin tetrix.exe
+	doman tetrix.6
+}
